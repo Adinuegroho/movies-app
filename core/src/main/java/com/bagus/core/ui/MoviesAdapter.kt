@@ -24,6 +24,8 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
         diffResult.dispatchUpdatesTo(this)
     }
 
+    fun getSwipedData(swipedPosition: Int): Movie = listData[swipedPosition]
+
     inner class MovieViewHolder(private val binding: ListItemMovieBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(movie: Movie) {
@@ -39,6 +41,12 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
                 Glide.with(itemView.context)
                     .load(itemView.context.getString(R.string.baseUrlImage, movie.posterPath))
                     .into(imgViewMovie)
+            }
+        }
+
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(listData[adapterPosition])
             }
         }
     }

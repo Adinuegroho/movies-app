@@ -1,10 +1,10 @@
 package com.bagus.moviesapp.movies
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -16,6 +16,7 @@ import com.bagus.core.ui.MoviesAdapter
 import com.bagus.core.utils.SortUtils
 import com.bagus.moviesapp.R
 import com.bagus.moviesapp.databinding.FragmentMoviesBinding
+import com.bagus.moviesapp.detail.DetailActivity
 import com.bagus.moviesapp.home.HomeActivity
 import com.bagus.moviesapp.home.SearchViewModel
 import com.miguelcatalan.materialsearchview.MaterialSearchView
@@ -47,16 +48,24 @@ class MoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        moviesAdapter = MoviesAdapter()
-        setList(sort)
+        setUpView()
         observeSearchQuery()
         setSearchList()
+    }
 
+    private fun setUpView() {
+        moviesAdapter = MoviesAdapter()
+        setList(sort)
         with(binding.rvMovies) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = moviesAdapter
+        }
+
+        moviesAdapter.onItemClick = {
+            val intent = Intent(activity, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_DATA, it)
+            startActivity(intent)
         }
     }
 
@@ -74,6 +83,7 @@ class MoviesFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     binding.notFound.visibility = View.GONE
+                    moviesAdapter.setData(movies.data)
                 }
                 is Resource.Error -> {
                     binding.progressBar.visibility = View.GONE
@@ -123,8 +133,14 @@ class MoviesFragment : Fragment() {
         })
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val item = menu.findItem(R.id.search_button)
+        searchView.setMenuItem(item)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }

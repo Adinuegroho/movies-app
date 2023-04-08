@@ -2,6 +2,7 @@ package com.bagus.moviesapp.di
 
 import com.bagus.core.domain.usecase.MovieAppInteractor
 import com.bagus.core.domain.usecase.MovieAppUseCase
+import com.bagus.moviesapp.detail.DetailViewModel
 import com.bagus.moviesapp.home.SearchViewModel
 import com.bagus.moviesapp.movies.MoviesViewModel
 import org.koin.android.viewmodel.dsl.viewModel
@@ -14,4 +15,5 @@ val useCaseModule = module {
 val viewModelModule = module {
     viewModel { MoviesViewModel(get()) }
     viewModel { SearchViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

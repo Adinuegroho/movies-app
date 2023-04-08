@@ -2,4 +2,5 @@
 <resources>
     <color name="colorPrimary">#212d3b</color>
     <color name="colorRating">#FBC02D</color>
+    <color name="colorText">#FFF</color>
 </resources>

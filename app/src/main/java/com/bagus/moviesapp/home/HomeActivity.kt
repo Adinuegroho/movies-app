@@ -2,6 +2,7 @@ package com.bagus.moviesapp.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.bagus.moviesapp.R
@@ -22,7 +23,26 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigationContainer.setNavigationChangeListener { _, position ->
             when (position) {
                 0 -> navigationChange(MoviesFragment())
+                1 -> moveToFavoriteFragment()
             }
+        }
+    }
+
+    private val className: String get() = "com.bagus.moviesapp.favorite.favorite.FavoriteFragment"
+
+    private fun moveToFavoriteFragment() {
+        val fragment = instantiateFragment(className)
+        if (fragment != null) {
+            navigationChange(fragment)
+        }
+    }
+
+    private fun instantiateFragment(className: String): Fragment? {
+        return try {
+            Class.forName(className).newInstance() as Fragment
+        } catch (e: Exception) {
+            Toast.makeText(this, "Module Not Found", Toast.LENGTH_SHORT).show()
+            null
         }
     }
 

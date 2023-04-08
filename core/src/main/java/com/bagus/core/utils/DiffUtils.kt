@@ -28,6 +28,7 @@ class DiffUtils(private val oldList: List<Movie>, private val newList: List<Movi
             title,
             voteCount,
             posterPath,
+            backdropPath,
             favorite,
             isTvShows) = oldList[oldItemPosition]
         val (overview1,
@@ -39,6 +40,7 @@ class DiffUtils(private val oldList: List<Movie>, private val newList: List<Movi
             title1,
             voteCount1,
             posterPath1,
+            backdropPath1,
             favorite1,
             isTvShows1) = newList[newItemPosition]
 
@@ -50,6 +52,7 @@ class DiffUtils(private val oldList: List<Movie>, private val newList: List<Movi
                 && title == title1
                 && voteCount == voteCount1
                 && posterPath == posterPath1
+                && backdropPath == backdropPath1
                 && favorite == favorite1
                 && isTvShows == isTvShows1
     }

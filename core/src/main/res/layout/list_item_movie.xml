@@ -21,13 +21,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/imageviewmovie" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="@string/title"
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="20sp"
@@ -39,10 +40,10 @@
             android:layout_marginStart="10dp"/>
         
         <TextView
-            android:id="@+id/tvDirector"
+            android:id="@+id/tvOverview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Director"
+            android:text="@string/overview"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             android:maxLines="2"
@@ -51,16 +52,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
             android:layout_marginTop="10dp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/tvRelease"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Release"-->
-<!--            android:textSize="16sp"-->
-<!--            app:layout_constraintStart_toStartOf="@id/tvTitle"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/tvDirector"-->
-<!--            android:layout_marginTop="10dp"/>-->
-
         <RatingBar
             android:id="@+id/ratingBar"
             style="@style/Widget.AppCompat.RatingBar.Small"
@@ -68,14 +59,14 @@
             android:layout_height="wrap_content"
             android:progressTint="@color/colorRating"
             app:layout_constraintStart_toStartOf="@id/tvTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvDirector"
+            app:layout_constraintTop_toBottomOf="@+id/tvOverview"
             android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/tvReleaseDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hours"
+            android:text="@string/release"
             android:textColor="@color/colorText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ratingBar"/>

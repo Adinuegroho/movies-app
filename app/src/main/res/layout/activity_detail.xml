@@ -29,7 +29,8 @@
                 android:layout_height="match_parent"
                 android:foregroundTintMode="src_atop"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax"/>
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/imageCover" />
             
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarDetail"
@@ -59,7 +60,8 @@
                 android:layout_marginStart="16dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/imageposter" />
             
             <TextView
                 android:id="@+id/titleSynopsis"
@@ -69,7 +71,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Synopsis"
+                android:text="@string/synopsis"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintTop_toBottomOf="@+id/imgPoster"
@@ -83,7 +85,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Synopsis"
+                android:text="@string/synopsis"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titleSynopsis"
@@ -98,7 +100,8 @@
                 android:src="@drawable/ic_favorite_false"
                 app:layout_constraintTop_toBottomOf="@+id/synopsis"
                 app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/colorPrimary"/>
+                app:rippleColor="@color/colorPrimary"
+                android:contentDescription="@string/btnFavorite" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnShare"
@@ -107,7 +110,8 @@
                 android:layout_marginStart="16dp"
                 android:src="@drawable/ic_share"
                 app:layout_constraintStart_toEndOf="@+id/btnFavorite"
-                app:layout_constraintTop_toTopOf="@id/btnFavorite"/>
+                app:layout_constraintTop_toTopOf="@id/btnFavorite"
+                android:contentDescription="@string/btnShared" />
             
         </androidx.constraintlayout.widget.ConstraintLayout>
 

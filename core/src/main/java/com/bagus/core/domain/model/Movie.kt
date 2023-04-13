@@ -1,7 +1,7 @@
 package com.bagus.core.domain.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Movie(
@@ -14,7 +14,6 @@ data class Movie(
     var title: String,
     var voteCount: Int,
     var posterPath: String,
-    var backdropPath: String,
     var favorite: Boolean = false,
     var isTvShows: Boolean = false
 ): Parcelable

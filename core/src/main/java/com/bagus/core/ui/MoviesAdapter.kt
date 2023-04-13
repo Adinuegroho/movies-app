@@ -31,7 +31,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
         fun bind(movie: Movie) {
             with(binding) {
                 tvTitle.text = movie.title
-                tvDirector.text = movie.overview
+                tvOverview.text = movie.overview
                 tvReleaseDate.text = movie.releaseDate
 
                 ratingBar.numStars = 5

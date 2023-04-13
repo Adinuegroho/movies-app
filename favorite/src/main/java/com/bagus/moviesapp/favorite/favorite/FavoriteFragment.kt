@@ -1,23 +1,19 @@
 package com.bagus.moviesapp.favorite.favorite
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bagus.core.data.Resource
 import com.bagus.core.domain.model.Movie
 import com.bagus.core.ui.MoviesAdapter
 import com.bagus.core.utils.SortUtils
 import com.bagus.moviesapp.detail.DetailActivity
-import com.bagus.moviesapp.favorite.R
 import com.bagus.moviesapp.favorite.R.string
 import com.bagus.moviesapp.favorite.databinding.FragmentFavoriteBinding
 import com.bagus.moviesapp.favorite.di.favoriteModule
@@ -25,8 +21,6 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
-import java.util.*
-import kotlin.concurrent.schedule
 
 class FavoriteFragment : Fragment() {
 
@@ -126,11 +120,9 @@ class FavoriteFragment : Fragment() {
     private val moviesObserver = Observer<List<Movie>> { movies ->
         if (movies.isNullOrEmpty()) {
             binding.progressBar.visibility = View.GONE
-            binding.notFound.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE
-            binding.notFound.visibility = View.GONE
-            moviesAdapter.setData(movies)
         }
+        moviesAdapter.setData(movies)
     }
 }

@@ -1,6 +1,5 @@
 package com.bagus.moviesapp.detail
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -37,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
             collapseActionView.setExpandedTitleColor(getColor(R.color.white))
             synopsis.text = movie.overview
             Glide.with(this@DetailActivity)
-                .load(getString(R.string.baseUrlImage, movie.backdropPath))
+                .load(getString(R.string.baseUrlImage, movie.posterPath))
                 .into(imgBackdrop)
 
             Glide.with(this@DetailActivity)

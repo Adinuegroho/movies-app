@@ -37,6 +37,4 @@ data class MovieResponse(
     @field:SerializedName("poster_path")
     val posterPath: String,
 
-    @field:SerializedName("backdrop_path")
-    val backdropPath: String
 )

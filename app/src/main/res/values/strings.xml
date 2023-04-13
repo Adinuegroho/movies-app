@@ -8,4 +8,9 @@
     <string name="shareTitle">Bagikan ke…</string>
     <string name="shareText">Sudah melihat film ini di Movies App?</string>
     <string name="title_favorite">Favorite</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="btnFavorite">button favorite</string>
+    <string name="btnShared">button shared</string>
+    <string name="imageCover">image_cover</string>
+    <string name="imageposter">Image Poster</string>
 </resources>

@@ -18,7 +18,6 @@ object DataMapper {
                 it.title,
                 it.voteCount,
                 it.posterPath,
-                it.backdropPath,
                 favorite = false,
                 isTvShows = false
             )
@@ -39,7 +38,6 @@ object DataMapper {
                 it.title,
                 it.voteCount,
                 it.posterPath,
-                it.backdropPath,
                 favorite = it.favorite,
                 isTvShows = it.isTvShows
             )
@@ -57,7 +55,6 @@ object DataMapper {
             input.title,
             input.voteCount,
             input.posterPath,
-            input.backdropPath,
             favorite = input.favorite,
             isTvShows = input.isTvShows
         )

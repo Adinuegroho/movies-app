@@ -22,16 +22,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/notFound"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:lottie_autoPlay="true"
-        android:scaleType="centerCrop"
-        app:lottie_loop="true"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

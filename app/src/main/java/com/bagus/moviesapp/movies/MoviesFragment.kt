@@ -2,7 +2,6 @@ package com.bagus.moviesapp.movies
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
@@ -44,7 +43,7 @@ class MoviesFragment : Fragment() {
     private lateinit var moviesAdapter: MoviesAdapter
     private val moviesViewModel: MoviesViewModel by viewModel()
     private val searchViewModel: SearchViewModel by viewModel()
-    private var sort = SortUtils.RANDOM
+    private var sort = SortUtils.NEWEST
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -83,7 +82,7 @@ class MoviesFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     binding.notFound.visibility = View.GONE
-                    moviesAdapter.setData(movies.data)
+                    moviesAdapter.setData(movies.data!!)
                 }
                 is Resource.Error -> {
                     binding.progressBar.visibility = View.GONE

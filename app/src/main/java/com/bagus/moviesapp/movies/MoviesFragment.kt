@@ -140,6 +140,9 @@ class MoviesFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        searchView.setOnQueryTextListener(null)
+        searchView.setOnSearchViewListener(null)
+        binding.rvMovies.adapter = null
         _binding = null
     }
 }

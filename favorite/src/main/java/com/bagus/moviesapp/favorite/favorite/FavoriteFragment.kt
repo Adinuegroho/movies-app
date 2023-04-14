@@ -56,8 +56,9 @@ class FavoriteFragment : Fragment() {
         unloadKoinModules(favoriteModule)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.rvFavorite.adapter = null
         _fragmentFavoriteBinding = null
     }
 

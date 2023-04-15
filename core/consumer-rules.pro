@@ -76,3 +76,9 @@ public *;
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {
 *** rewind();
 }
+
+-keep class kotlin.** { *; }
+-keep class androidx.** { *; }
+-keep class org.koin.** { *; }
+-keep class com.bagus.core.** { *; }
+-keep class com.google.android.material.snackbar.** { *; }

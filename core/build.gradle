@@ -24,7 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            // Run 'app' terlebih dahulu sebelum mengubah nilai minifyEnable menjadi true
+            // jika sudah Run 'app' maka ubah nilai minifyEnable (app dan core) menjadi true
+            // terakhir Sync Now dan Run 'app'
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

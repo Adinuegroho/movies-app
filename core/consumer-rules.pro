@@ -77,8 +77,11 @@ public *;
 *** rewind();
 }
 
+##---------------Favorite
 -keep class kotlin.** { *; }
--keep class androidx.** { *; }
--keep class org.koin.** { *; }
--keep class com.bagus.core.** { *; }
+-keep class androidx.recyclerview.** { *; }
+-keep class androidx.viewbinding.** { *; }
+-keep class org.koin.core.** { *; }
+-keep class com.bagus.core.domain.usecase.** { *; }
+-keep class com.bagus.core.ui.** { *; }
 -keep class com.google.android.material.snackbar.** { *; }

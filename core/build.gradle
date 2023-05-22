@@ -16,6 +16,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        
+        buildConfigField ("String", 'API_KEY', '"407e38b098711b86c061e31855c310e0"')
+        buildConfigField ("String", 'BASE_URL', '"https://api.themoviedb.org/3/discover/"')
+        buildConfigField ("String", 'CP_1', '"sha256/NPIMWkzcNG/MyZsVExrC6tdy5LTZzeeKg2UlnGG55UY="')
+        buildConfigField ("String", 'CP_2', '"sha256/DxH4tt40L+eduF6szpY6TONlxhZhBd+pJ9wbHlQ2fuw="')
+        buildConfigField ("String", 'CP_3', '"sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI="')
     }
 
     buildTypes {

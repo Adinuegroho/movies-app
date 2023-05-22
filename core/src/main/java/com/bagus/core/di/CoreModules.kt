@@ -1,6 +1,7 @@
 package com.bagus.core.di
 
 import androidx.room.Room
+import com.bagus.core.BuildConfig
 import com.bagus.core.data.MoviesAppRepository
 import com.bagus.core.data.source.local.LocalDataSource
 import com.bagus.core.data.source.local.room.MovieDatabase
@@ -37,9 +38,9 @@ val networkModule = module {
     single {
         val hostname = "api.themoviedb.org"
         val certificatePinner = CertificatePinner.Builder()
-            .add(hostname, "sha256/NPIMWkzcNG/MyZsVExrC6tdy5LTZzeeKg2UlnGG55UY=")
-            .add(hostname, "sha256/DxH4tt40L+eduF6szpY6TONlxhZhBd+pJ9wbHlQ2fuw=")
-            .add(hostname, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+            .add(hostname, BuildConfig.CP_1)
+            .add(hostname, BuildConfig.CP_2)
+            .add(hostname, BuildConfig.CP_3)
             .build()
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
@@ -50,7 +51,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/discover/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()

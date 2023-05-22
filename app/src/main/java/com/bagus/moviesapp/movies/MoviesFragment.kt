@@ -23,15 +23,13 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
 
-    private var _binding: FragmentMoviesBinding? = null
-    private val binding get() = _binding!!
-
+    private lateinit var binding: FragmentMoviesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMoviesBinding.inflate(inflater, container, false)
+        binding = FragmentMoviesBinding.inflate(inflater, container, false)
         val toolbar: Toolbar = activity?.findViewById<View>(R.id.toolbar) as Toolbar
         (activity as AppCompatActivity?)?.setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
@@ -143,6 +141,5 @@ class MoviesFragment : Fragment() {
         searchView.setOnQueryTextListener(null)
         searchView.setOnSearchViewListener(null)
         binding.rvMovies.adapter = null
-        _binding = null
     }
 }

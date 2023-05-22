@@ -3,7 +3,6 @@ package com.bagus.core.data.source.local.room
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
 import com.bagus.core.data.source.local.entity.MovieEntity
-import com.bagus.core.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 @Dao

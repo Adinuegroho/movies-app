@@ -1,5 +1,6 @@
 package com.bagus.core.data.source.remote
 
+import com.bagus.core.BuildConfig
 import com.bagus.core.data.source.remote.network.ApiResponse
 import com.bagus.core.data.source.remote.network.ApiService
 import com.bagus.core.data.source.remote.response.MovieResponse
@@ -10,7 +11,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
 
-    private val apiKey = "407e38b098711b86c061e31855c310e0" //INPUT YOUR API KEY HERE!!
+    private val apiKey = BuildConfig.API_KEY //INPUT YOUR API KEY HERE!!
 
     suspend fun getMovies(): Flow<ApiResponse<List<MovieResponse>>> {
         return flow {
